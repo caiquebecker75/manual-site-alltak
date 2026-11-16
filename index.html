@@ -21,11 +21,9 @@
   .mono{font-family:'Space Mono',monospace}
   a{color:inherit}
 
-  /* grão de papel */
   body::after{content:'';position:fixed;inset:0;pointer-events:none;opacity:.05;z-index:999;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-  /* barra superior */
   .topo{position:sticky;top:0;z-index:50;background:var(--escuro);color:var(--branco);border-bottom:3px solid var(--lime)}
   .topo-in{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
   .topo .marca{font-family:'Big Shoulders Display';font-weight:900;font-size:20px;letter-spacing:.06em}
@@ -35,22 +33,20 @@
 
   .pagina{max-width:1080px;margin:0 auto;padding:0 24px}
 
-  /* capa */
   .capa{padding:84px 0 64px;border-bottom:1px solid var(--linha)}
   .capa .tag{display:inline-block;background:var(--tinta);color:var(--lime);font-family:'Space Mono';font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px}
   .capa h1{font-size:clamp(64px,11vw,140px);font-weight:900;margin:22px 0 10px}
   .capa h1 em{font-style:normal;color:var(--azul)}
-  .capa p.sub{max-width:640px;font-size:19px;color:var(--cinza)}
+  .capa p.sub{max-width:660px;font-size:19px;color:var(--cinza)}
   .capa .meta{margin-top:28px;display:flex;gap:28px;flex-wrap:wrap;font-family:'Space Mono';font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--cinza)}
 
   section{padding:64px 0;border-bottom:1px solid var(--linha)}
   .num{font-family:'Space Mono';font-size:13px;color:var(--azul);letter-spacing:.14em}
-  section>.pagina>h2, h2.titulo{font-size:clamp(36px,5.4vw,58px);font-weight:800;margin:6px 0 26px}
+  section>.pagina>h2{font-size:clamp(36px,5.4vw,58px);font-weight:800;margin:6px 0 26px}
 
-  .lead{max-width:720px;font-size:18px;color:#33312B}
+  .lead{max-width:740px;font-size:18px;color:#33312B}
   .lead b{color:var(--tinta)}
 
-  /* cartões */
   .cards{display:grid;gap:14px;margin-top:30px}
   @media(min-width:760px){.cards.c3{grid-template-columns:repeat(3,1fr)}.cards.c2{grid-template-columns:repeat(2,1fr)}}
   .card{background:var(--branco);border:1px solid var(--linha);border-top:4px solid var(--tinta);padding:22px}
@@ -59,56 +55,44 @@
   .card .mono-link{display:inline-block;margin-top:12px;font-family:'Space Mono';font-size:12.5px;word-break:break-all;background:var(--papel);padding:6px 10px;border:1px solid var(--linha);text-decoration:none}
   .card .mono-link:hover{background:var(--lime)}
 
-  /* fluxo em 4 passos */
   .fluxo{display:grid;gap:10px;margin-top:30px}
   @media(min-width:860px){.fluxo{grid-template-columns:repeat(4,1fr)}}
-  .passo{background:var(--escuro);color:#E8E6DC;padding:20px;position:relative}
+  .passo{background:var(--escuro);color:#E8E6DC;padding:20px}
   .passo .n{font-family:'Big Shoulders Display';font-weight:900;font-size:40px;color:var(--lime)}
   .passo h3{color:var(--branco);font-size:20px;margin:4px 0 6px}
   .passo p{font-size:14px;color:#B9B6A9}
 
-  /* tabela mapa */
   table{width:100%;border-collapse:collapse;margin-top:26px;background:var(--branco)}
   th,td{border:1px solid var(--linha);padding:12px 14px;text-align:left;font-size:15px;vertical-align:top}
   th{background:var(--tinta);color:var(--branco);font-family:'Space Mono';font-size:12px;text-transform:uppercase;letter-spacing:.08em}
-  td code{font-family:'Space Mono';font-size:13px;background:var(--papel);padding:2px 6px;border:1px solid var(--linha);white-space:nowrap}
+  td b.local{font-family:'Space Mono';font-size:13px;background:var(--papel);padding:2px 8px;border:1px solid var(--linha);font-weight:400;white-space:nowrap}
   .pode{display:inline-block;font-family:'Space Mono';font-size:11px;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px}
   .pode.sim{background:var(--lime)}
   .pode.ajuda{background:#FFD9A8}
 
-  /* passos numerados */
   ol.passos{counter-reset:p;list-style:none;margin-top:24px;display:grid;gap:10px}
   ol.passos li{counter-increment:p;background:var(--branco);border:1px solid var(--linha);padding:16px 18px 16px 64px;position:relative;font-size:16px}
   ol.passos li::before{content:counter(p,decimal-leading-zero);position:absolute;left:16px;top:14px;font-family:'Big Shoulders Display';font-weight:900;font-size:26px;color:var(--azul)}
-  ol.passos li b{font-weight:700}
   ol.passos li .ui{font-family:'Space Mono';font-size:13.5px;background:var(--escuro);color:var(--lime);padding:2px 8px;white-space:nowrap}
 
-  /* receitas */
   .receita{background:var(--branco);border:1px solid var(--linha);border-left:6px solid var(--azul);padding:26px;margin-top:22px}
   .receita>h3{font-size:30px;font-weight:800}
   .receita .onde{font-family:'Space Mono';font-size:12.5px;color:var(--cinza);margin:6px 0 14px}
-  .receita .onde code{background:var(--papel);border:1px solid var(--linha);padding:2px 6px}
-  pre{background:var(--escuro);color:#E8E6DC;font-family:'Space Mono';font-size:13.5px;line-height:1.55;padding:18px;overflow-x:auto;margin:14px 0;border-left:4px solid var(--lime)}
-  pre .vk{color:var(--lime)} pre .vv{color:#8FC7FF} pre .cm{color:#86847A}
+  .receita .onde b{background:var(--papel);border:1px solid var(--linha);padding:2px 8px;font-weight:400}
 
   .aviso{border:1px solid var(--linha);background:#FFF7DF;border-left:6px solid #E7B43C;padding:16px 18px;margin:16px 0;font-size:15.5px}
   .dica{border:1px solid var(--linha);background:#E9F3FF;border-left:6px solid var(--azul);padding:16px 18px;margin:16px 0;font-size:15.5px}
   .aviso b,.dica b{font-family:'Space Mono';font-size:12px;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:4px}
 
-  /* regras de ouro */
-  .regras{display:grid;gap:12px;margin-top:28px}
-  @media(min-width:760px){.regras{grid-template-columns:1fr 1fr}}
-  .regra{background:var(--branco);border:1px solid var(--linha);padding:18px 20px;display:flex;gap:14px}
-  .regra .ic{flex:0 0 auto;width:34px;height:34px;background:var(--lime);display:grid;place-items:center;font-weight:700;font-family:'Space Mono'}
-  .regra p{font-size:15px;color:#33312B}
-  .regra p b{display:block;font-size:16px;color:var(--tinta)}
+  .nomes{margin-top:14px;display:grid;gap:8px}
+  .nome-ex{display:flex;align-items:center;gap:12px;background:var(--papel);border:1px solid var(--linha);padding:10px 14px;font-family:'Space Mono';font-size:13.5px;flex-wrap:wrap}
+  .nome-ex .ok{background:var(--lime);padding:1px 8px;font-size:11px;text-transform:uppercase}
+  .nome-ex .ruim{background:#FFC2B8;padding:1px 8px;font-size:11px;text-transform:uppercase}
 
-  /* checklist */
   ul.check{list-style:none;margin-top:22px;display:grid;gap:8px}
   ul.check li{background:var(--branco);border:1px solid var(--linha);padding:13px 16px 13px 46px;position:relative;font-size:15.5px}
   ul.check li::before{content:'';position:absolute;left:14px;top:16px;width:16px;height:16px;border:2px solid var(--tinta);background:var(--branco)}
 
-  /* agenda */
   .agenda{margin-top:26px;display:grid;gap:2px}
   .agenda .bloco{display:grid;grid-template-columns:110px 1fr;background:var(--branco);border:1px solid var(--linha)}
   .agenda .hora{font-family:'Space Mono';font-size:13px;padding:14px;background:var(--escuro);color:var(--lime);display:flex;align-items:center}
@@ -132,10 +116,10 @@
       <a href="#como">Como funciona</a>
       <a href="#acessos">Acessos</a>
       <a href="#mapa">Mapa</a>
-      <a href="#editar">Editar</a>
-      <a href="#receitas">Receitas</a>
+      <a href="#lojas">Lojas</a>
+      <a href="#arquivos">Arquivos</a>
       <a href="#regras">Regras</a>
-      <a href="#publicar">Publicar</a>
+      <a href="#conferir">Conferir</a>
       <a href="#leads">Leads</a>
       <a href="#treinamento">Treinamento</a>
     </nav>
@@ -146,10 +130,10 @@
   <div class="pagina">
     <span class="tag">Alltak · alltak.com.br</span>
     <h1>Manual<br>do <em>site</em></h1>
-    <p class="sub">Guia prático para a equipe Alltak atualizar o conteúdo do site com autonomia: lojas, boletins técnicos, catálogos, imagens e muito mais, sem depender de ninguém para o dia a dia.</p>
+    <p class="sub">Guia prático para a equipe Alltak atualizar o site com autonomia usando duas ferramentas que todo mundo já conhece: uma <b>planilha Google</b> para as informações e uma <b>pasta no Google Drive</b> para os arquivos. Sem sistema novo, sem senha nova, sem depender de ninguém para o dia a dia.</p>
     <div class="meta">
       <span>Preparado pela 75 LAB</span>
-      <span>Versão 1 · Novembro de 2026</span>
+      <span>Versão 2 · Novembro de 2026</span>
       <span>Uso interno Alltak</span>
     </div>
   </div>
@@ -159,13 +143,14 @@
   <div class="pagina">
     <span class="num">01</span>
     <h2>Como o site funciona</h2>
-    <p class="lead">O site novo foi construído separando o <b>visual</b> (que fica travado e protegido) do <b>conteúdo</b> (que fica em arquivos simples de texto e em pastas de imagens e PDFs). Isso significa que a maior parte das atualizações do dia a dia não mexe em nada "de programação": é editar uma lista, trocar um arquivo, salvar.</p>
+    <p class="lead">O visual do site fica travado e protegido. O <b>conteúdo</b> (lojas, boletins, catálogos, imagens) vive em dois lugares que a sua equipe controla: a planilha e a pasta. Um robô de publicação da 75 LAB passa <b>a cada hora</b> recolhendo o que mudou e colocando no ar, com verificação automática para nada quebrar.</p>
     <div class="fluxo">
-      <div class="passo"><span class="n">1</span><h3>Você edita</h3><p>No painel de conteúdo (GitHub), direto pelo navegador, sem instalar nada.</p></div>
-      <div class="passo"><span class="n">2</span><h3>O site de testes atualiza</h3><p>Em poucos minutos a mudança aparece no ambiente de testes, para você conferir.</p></div>
-      <div class="passo"><span class="n">3</span><h3>Você confere</h3><p>Abriu, olhou, está certo? Se algo saiu torto, é só editar de novo.</p></div>
-      <div class="passo"><span class="n">4</span><h3>Vai para o oficial</h3><p>A 75 LAB publica no alltak.com.br, normalmente no mesmo dia útil.</p></div>
+      <div class="passo"><span class="n">1</span><h3>Você edita</h3><p>Muda uma linha na planilha ou solta um arquivo na pasta do Drive. Só isso.</p></div>
+      <div class="passo"><span class="n">2</span><h3>O robô recolhe</h3><p>Na virada de cada hora, a publicação roda sozinha com o que estiver lá.</p></div>
+      <div class="passo"><span class="n">3</span><h3>O site atualiza</h3><p>A mudança entra no alltak.com.br já verificada de ponta a ponta.</p></div>
+      <div class="passo"><span class="n">4</span><h3>Você confere</h3><p>Abre o site e vê. Errou algo? Corrige na planilha e a próxima rodada conserta.</p></div>
     </div>
+    <div class="dica"><b>Urgência</b>Precisa de algo no ar agora, sem esperar a próxima rodada? Chama a 75 LAB no canal combinado que publicamos na hora.</div>
   </div>
 </section>
 
@@ -173,21 +158,22 @@
   <div class="pagina">
     <span class="num">02</span>
     <h2>Os três acessos</h2>
+    <p class="lead">Os três chegam por <b>convite do Google no e-mail de cada pessoa da equipe</b>. É só nos passar a lista de e-mails. Quem entra, já usa: não existe cadastro nem senha além da conta Google que a pessoa já tem.</p>
     <div class="cards c3">
       <div class="card">
-        <h3>Painel de conteúdo</h3>
-        <p>É uma conta no GitHub, a plataforma onde os arquivos do site ficam guardados com histórico de tudo que mudou. Crie uma conta gratuita com o e-mail corporativo e nos informe o usuário: enviamos o convite de edição.</p>
-        <a class="mono-link" href="https://github.com/caiquebecker75/alltak-site" target="_blank" rel="noreferrer">github.com/caiquebecker75/alltak-site</a>
+        <h3>Planilha de conteúdo</h3>
+        <p><b>"Site Alltak · Conteúdo"</b>, no Google Planilhas. Hoje controla as lojas do Onde Comprar (Brasil e outros países), com uma aba para cada lista. É a fonte oficial: o que está nela é o que o site mostra.</p>
+        <span class="mono-link">Google Planilhas · chega por convite</span>
       </div>
       <div class="card">
-        <h3>Ambiente de testes</h3>
-        <p>Uma cópia do site que atualiza sozinha alguns minutos depois de cada edição. É aqui que você confere a mudança antes de ela ir para o site oficial. Pode abrir e navegar à vontade: nada feito aqui afeta o público.</p>
-        <a class="mono-link" href="https://projetos.75lab.com.br/alltak-site/" target="_blank" rel="noreferrer">projetos.75lab.com.br/alltak-site/</a>
+        <h3>Pasta de arquivos</h3>
+        <p><b>"Site Alltak · Arquivos"</b>, no Google Drive, com subpastas por tipo: Boletins Técnicos, Catálogos, Imagens de Cores e Transparência Salarial. Soltou o arquivo na subpasta certa, ele entra no site na próxima rodada.</p>
+        <span class="mono-link">Google Drive · chega por convite</span>
       </div>
       <div class="card">
         <h3>Planilha de leads</h3>
-        <p>Todo cadastro feito para baixar um catálogo no site cai na hora numa planilha Google: nome, e-mail, empresa, WhatsApp, cidade e qual material a pessoa baixou. O acesso é liberado por convite para o e-mail da sua equipe.</p>
-        <span class="mono-link">Alltak · Leads do site (Google Planilhas)</span>
+        <p><b>"Alltak · Leads do site"</b>: todo cadastro feito para baixar material no site cai aqui na hora, com nome, e-mail, empresa, WhatsApp, cidade e o material baixado. Leitura para o time comercial.</p>
+        <span class="mono-link">Google Planilhas · chega por convite</span>
       </div>
     </div>
   </div>
@@ -197,108 +183,79 @@
   <div class="pagina">
     <span class="num">03</span>
     <h2>Mapa do conteúdo</h2>
-    <p class="lead">Cada área do site vive num arquivo. Esta tabela é a sua bússola: diz onde mexer e o grau de autonomia de cada área.</p>
+    <p class="lead">O que a sua equipe atualiza sozinha e o que passa pela 75 LAB.</p>
     <table>
-      <tr><th>Área do site</th><th>Arquivo ou pasta</th><th>Autonomia</th></tr>
-      <tr><td>Onde Comprar (lojas do Brasil)</td><td><code>src/data/lojas.json</code></td><td><span class="pode sim">Você mesmo</span></td></tr>
-      <tr><td>Onde Comprar (outros países)</td><td><code>src/data/lojas-internacionais.json</code></td><td><span class="pode sim">Você mesmo</span></td></tr>
-      <tr><td>Boletins técnicos (PDFs das linhas)</td><td><code>public/wp-uploads/ANO/MÊS/</code> + <code>src/data/wp/linhas.json</code></td><td><span class="pode sim">Você mesmo</span></td></tr>
-      <tr><td>Downloads de Catálogos</td><td><code>public/catalogos/</code> + <code>src/data/downloads.ts</code></td><td><span class="pode sim">Você mesmo</span></td></tr>
-      <tr><td>Imagens das cores (bobinas e aplicações)</td><td><code>public/colors/wraps · decor · signs</code></td><td><span class="pode sim">Você mesmo</span></td></tr>
-      <tr><td>Galerias das linhas de produto</td><td><code>public/wp-uploads/</code> (trocando o arquivo pelo mesmo nome)</td><td><span class="pode sim">Você mesmo</span></td></tr>
-      <tr><td>Relatório de Transparência Salarial</td><td><code>public/transparencia/</code></td><td><span class="pode ajuda">Com a 75 LAB</span></td></tr>
-      <tr><td>Notícias novas</td><td><code>public/wp-blog/</code></td><td><span class="pode ajuda">Com a 75 LAB</span></td></tr>
-      <tr><td>Cores novas ou linhas novas de produto</td><td>vários arquivos ligados entre si</td><td><span class="pode ajuda">Com a 75 LAB</span></td></tr>
-      <tr><td>Textos institucionais, menus e traduções</td><td><code>src/i18n/</code></td><td><span class="pode ajuda">Com a 75 LAB</span></td></tr>
+      <tr><th>Área do site</th><th>Onde mexer</th><th>Autonomia</th></tr>
+      <tr><td>Onde Comprar · lojas do Brasil</td><td><b class="local">Planilha · aba Lojas Brasil</b></td><td><span class="pode sim">Você mesmo</span></td></tr>
+      <tr><td>Onde Comprar · outros países</td><td><b class="local">Planilha · aba Lojas Outros Países</b></td><td><span class="pode sim">Você mesmo</span></td></tr>
+      <tr><td>Boletins técnicos das linhas</td><td><b class="local">Drive · Boletins Técnicos</b></td><td><span class="pode sim">Você mesmo</span></td></tr>
+      <tr><td>Catálogos da página de downloads</td><td><b class="local">Drive · Catálogos</b></td><td><span class="pode sim">Você mesmo</span></td></tr>
+      <tr><td>Imagens de cores (bobinas e aplicações)</td><td><b class="local">Drive · Imagens de Cores</b></td><td><span class="pode sim">Você mesmo</span></td></tr>
+      <tr><td>Relatório de Transparência Salarial</td><td><b class="local">Drive · Transparência Salarial</b></td><td><span class="pode ajuda">Com a 75 LAB</span></td></tr>
+      <tr><td>Notícias novas</td><td>enviar texto e imagens para a 75 LAB</td><td><span class="pode ajuda">Com a 75 LAB</span></td></tr>
+      <tr><td>Cores novas, linhas novas, páginas novas</td><td>briefing para a 75 LAB</td><td><span class="pode ajuda">Com a 75 LAB</span></td></tr>
+      <tr><td>Textos institucionais, menus e traduções</td><td>pedido para a 75 LAB</td><td><span class="pode ajuda">Com a 75 LAB</span></td></tr>
     </table>
-    <div class="dica"><b>Dica</b>Na dúvida entre as duas colunas, manda mensagem para a 75 LAB antes. Errar não quebra nada para o público (o oficial só muda na publicação), mas pedir antes economiza o retrabalho.</div>
   </div>
 </section>
 
-<section id="editar">
+<section id="lojas">
   <div class="pagina">
     <span class="num">04</span>
-    <h2>O gesto básico: editar um arquivo</h2>
-    <p class="lead">Toda receita deste manual usa o mesmo movimento. Aprendeu uma vez, aprendeu todas.</p>
+    <h2>Lojas: a planilha</h2>
+    <p class="lead">Cada linha da planilha é uma loja no site, na ordem natural: UF, Estado, Cidade, Empresa, Endereço, Bairro e Telefone. A aba de outros países tem ainda País e WhatsApp.</p>
     <ol class="passos">
-      <li>Entre no painel de conteúdo e navegue até o arquivo (por exemplo <span class="ui">src/data/lojas.json</span>). Dica: a tecla <span class="ui">t</span> abre uma busca de arquivos por nome.</li>
-      <li>Clique no <b>ícone de lápis</b> no canto superior direito do arquivo (<span class="ui">Edit this file</span>).</li>
-      <li>Faça a alteração no texto, com calma. As receitas da próxima seção mostram exatamente o que copiar e colar.</li>
-      <li>Clique no botão verde <span class="ui">Commit changes...</span> no alto da tela.</li>
-      <li>Na janelinha, escreva uma descrição curta do que você fez (por exemplo <b>"Nova loja em Recife"</b>). Essa descrição vira o histórico da mudança.</li>
-      <li>Confirme em <span class="ui">Commit changes</span>. Pronto: em poucos minutos a mudança aparece no ambiente de testes.</li>
+      <li><b>Para incluir uma loja:</b> escreva os dados numa linha vazia no fim da aba. Não precisa ordenar: o site organiza sozinho por estado e cidade.</li>
+      <li><b>Para alterar:</b> clique na célula e corrija, como em qualquer planilha.</li>
+      <li><b>Para excluir:</b> apague a linha inteira (botão direito no número da linha, <span class="ui">Excluir linha</span>).</li>
+      <li><b>WhatsApp das lojas internacionais:</b> só números com o código do país, sem espaços (exemplo: <span class="ui">595212376979</span>). Sem WhatsApp? Deixe em branco que o site mostra o telefone comum.</li>
     </ol>
-    <h3 style="font-size:26px;margin-top:40px">Para enviar um arquivo novo (PDF ou imagem)</h3>
-    <ol class="passos">
-      <li>Navegue até a <b>pasta</b> onde o arquivo deve morar (por exemplo <span class="ui">public/wp-uploads/2026/11</span>).</li>
-      <li>Clique em <span class="ui">Add file</span> e depois <span class="ui">Upload files</span>.</li>
-      <li>Arraste o arquivo para a página, descreva a mudança e confirme em <span class="ui">Commit changes</span>.</li>
-      <li>Para <b>trocar</b> um arquivo existente (uma imagem ou PDF novo no lugar do antigo), envie o arquivo novo com <b>exatamente o mesmo nome</b> na mesma pasta: ele substitui o anterior e o site passa a usar o novo sem precisar editar mais nada.</li>
-    </ol>
+    <div class="aviso"><b>Atenção</b>Não mude os títulos das colunas, não troque colunas de lugar e não crie abas novas. A aba Leia-me dentro da própria planilha tem este mesmo resumo.</div>
   </div>
 </section>
 
-<section id="receitas">
+<section id="arquivos">
   <div class="pagina">
     <span class="num">05</span>
-    <h2>Receitas prontas</h2>
-
-    <div class="receita">
-      <h3>Incluir, alterar ou excluir uma loja</h3>
-      <p class="onde">Arquivo: <code>src/data/lojas.json</code> · página Onde Comprar</p>
-      <p>O arquivo é uma lista de lojas. Cada loja é um bloco entre chaves. Para <b>incluir</b>, copie um bloco existente, cole ao lado dos vizinhos do mesmo estado e troque os dados:</p>
-<pre>{
- <span class="vk">"uf"</span>: <span class="vv">"PE"</span>,
- <span class="vk">"estado"</span>: <span class="vv">"Pernambuco"</span>,
- <span class="vk">"cidade"</span>: <span class="vv">"Recife"</span>,
- <span class="vk">"empresa"</span>: <span class="vv">"COLORSIGN"</span>,
- <span class="vk">"endereco"</span>: <span class="vv">"Av. Marechal Mascarenhas de Morais - CEP 51170-000"</span>,
- <span class="vk">"bairro"</span>: <span class="vv">""</span>,
- <span class="vk">"telefone"</span>: <span class="vv">"81 3072-5559"</span>
-},</pre>
-      <p>Para <b>alterar</b>, edite só o texto entre aspas. Para <b>excluir</b>, apague o bloco inteiro, da chave que abre à chave que fecha, incluindo a vírgula que o separava do vizinho.</p>
-      <div class="aviso"><b>Atenção</b>Cada bloco termina com vírgula, menos o último da lista. Se a tela do editor marcar algo em vermelho depois da edição, revise as vírgulas e as aspas antes de salvar.</div>
-    </div>
-
-    <div class="receita">
-      <h3>Lojas em outros países</h3>
-      <p class="onde">Arquivo: <code>src/data/lojas-internacionais.json</code> · caixa no fim da página Onde Comprar</p>
-      <p>Mesma lógica da receita anterior, com dois campos a mais: <b>pais</b> e <b>whatsapp</b>. No campo whatsapp vai só o número com o código do país, sem espaços (por exemplo <span class="mono">595212376979</span>); se a loja não atende por WhatsApp, deixe as aspas vazias e o site mostra o telefone comum.</p>
-    </div>
+    <h2>Arquivos: a pasta do Drive</h2>
+    <p class="lead">Arrastou para a subpasta certa, está feito. A regra única é o <b>nome do arquivo</b>: é por ele que o site sabe o que substituir.</p>
 
     <div class="receita">
       <h3>Trocar um boletim técnico</h3>
-      <p class="onde">Pasta: <code>public/wp-uploads/ANO/MÊS/</code> + arquivo <code>src/data/wp/linhas.json</code></p>
-      <ol class="passos">
-        <li>Envie o PDF novo para a pasta do mês atual, por exemplo <span class="ui">public/wp-uploads/2026/12</span> (crie a pasta pelo próprio upload, digitando <span class="ui">2026/12/</span> antes do nome ao enviar). Use nome sem espaços nem acentos: <b>BT-020-KRUSHER.pdf</b>.</li>
-        <li>Abra <span class="ui">src/data/wp/linhas.json</span>, busque a linha do produto (tecle <span class="ui">Ctrl&nbsp;F</span> e digite o nome, por exemplo <b>krusher</b>).</li>
-        <li>No campo <b>"boletins"</b>, troque o caminho antigo pelo novo: <span class="mono">"./wp-uploads/2026/12/BT-020-KRUSHER.pdf"</span>.</li>
-      </ol>
+      <p class="onde">Subpasta: <b>Boletins Técnicos</b></p>
+      <p>Solte o PDF novo com o <b>nome da linha no nome do arquivo</b>. O número do BT pode mudar à vontade: é a palavra da linha que direciona.</p>
+      <div class="nomes">
+        <div class="nome-ex"><span class="ok">Certo</span> BT 021 - KRUSHER.pdf <span style="color:#86847A">→ entra na linha Krusher</span></div>
+        <div class="nome-ex"><span class="ok">Certo</span> BT 045 - SATIN.pdf <span style="color:#86847A">→ entra na linha Satin</span></div>
+        <div class="nome-ex"><span class="ruim">Evite</span> boletim novo final v2.pdf <span style="color:#86847A">→ sem nome de linha, fica aguardando a 75 LAB</span></div>
+      </div>
     </div>
 
     <div class="receita">
       <h3>Atualizar um catálogo</h3>
-      <p class="onde">Pasta: <code>public/catalogos/</code> + arquivo <code>src/data/downloads.ts</code> · página Downloads de Catálogos</p>
-      <ol class="passos">
-        <li>Se o catálogo novo substitui o atual sem mudar de nome na página, basta enviar o PDF com <b>o mesmo nome do arquivo antigo</b> (por exemplo <span class="ui">catalogo-wraps-2026.pdf</span>) para <span class="ui">public/catalogos</span>. Fim.</li>
-        <li>Se é um catálogo novo (nome novo na página), envie o PDF com um nome novo e edite <span class="ui">src/data/downloads.ts</span>: copie uma linha existente do grupo "catalogos" e ajuste o nome e o caminho do arquivo.</li>
-        <li>A capinha (miniatura) do card vive em <span class="ui">public/downloads/miniaturas</span>. Para capa nova, envie uma imagem JPG vertical (por volta de 340 x 600) e aponte para ela no arquivo <span class="ui">src/data/miniaturas.json</span>.</li>
-      </ol>
-      <div class="aviso"><b>Atenção</b>PDFs com mais de 24 MB não entram pelo fluxo normal de publicação. Se o catálogo passar disso, envie mesmo assim e avise a 75 LAB: nós fazemos o tratamento especial na publicação (o visitante não percebe diferença nenhuma).</div>
+      <p class="onde">Subpasta: <b>Catálogos</b></p>
+      <p>Solte o PDF com o nome da linha dele: <b>Wraps</b>, <b>Decor</b>, <b>Signs</b>, <b>Evolution Pro</b>, <b>Tools</b> ou <b>IWC</b> no nome do arquivo. O catálogo do site é substituído pelo novo, e a capinha do card é gerada automaticamente da primeira página.</p>
+      <div class="nomes">
+        <div class="nome-ex"><span class="ok">Certo</span> Catalogo Decor Dez 2026.pdf <span style="color:#86847A">→ substitui o catálogo Decor</span></div>
+      </div>
     </div>
 
     <div class="receita">
       <h3>Trocar a imagem de uma cor</h3>
-      <p class="onde">Pastas: <code>public/colors/wraps</code> · <code>decor</code> · <code>signs</code> e <code>public/wp-uploads/</code></p>
-      <p>Cada cor tem imagens com o código dela no nome (por exemplo <span class="mono">18K70</span> é o Krusher Black). Para atualizar a arte, envie a imagem nova com <b>exatamente o mesmo nome de arquivo</b> na mesma pasta: o site troca sozinho, no explorador de cores, na página da cor e na galeria da linha.</p>
-      <div class="dica"><b>Dica</b>Padrão das artes de bobina: JPG quadrado de 1080 x 1080, como as artes oficiais de campanha. Nome de arquivo nunca muda de grafia: maiúsculas, hífens e extensão idênticos ao atual.</div>
+      <p class="onde">Subpasta: <b>Imagens de Cores</b></p>
+      <p>Solte a imagem com o <b>código da cor no nome</b> (o código aparece no site, embaixo do nome de cada cor). Padrão das artes: JPG quadrado 1080 x 1080, como as artes oficiais de campanha.</p>
+      <div class="nomes">
+        <div class="nome-ex"><span class="ok">Certo</span> WRAPS-Krusher-Black-18K70.jpg <span style="color:#86847A">→ troca a bobina do Krusher Black em todo o site</span></div>
+      </div>
     </div>
 
     <div class="receita">
       <h3>Relatório de Transparência Salarial</h3>
-      <p class="onde">Pasta: <code>public/transparencia/</code> · atualização semestral</p>
-      <p>Envie o PDF do semestre novo para a pasta e avise a 75 LAB para apontar a página e o texto do semestre vigente. Como é documento legal, fazemos juntos a conferência final.</p>
+      <p class="onde">Subpasta: <b>Transparência Salarial</b></p>
+      <p>Solte o PDF do semestre novo e avise a 75 LAB: por ser documento legal, a troca do semestre vigente na página é conferida a quatro mãos antes de ir ao ar.</p>
     </div>
+
+    <div class="dica"><b>Como saber que deu certo</b>Depois da rodada da hora, o arquivo some da subpasta e aparece em <b>Publicados</b>, com a data na frente do nome. Publicados é o comprovante e o histórico: não precisa apagar nada.</div>
   </div>
 </section>
 
@@ -306,27 +263,25 @@
   <div class="pagina">
     <span class="num">06</span>
     <h2>Regras de ouro</h2>
-    <div class="regras">
-      <div class="regra"><span class="ic">"</span><p><b>Edite só o que está entre aspas.</b> Os nomes dos campos ("empresa", "telefone", "arquivo") nunca mudam; o que muda é o valor depois dos dois pontos.</p></div>
-      <div class="regra"><span class="ic">,</span><p><b>Vírgulas importam.</b> Blocos e itens são separados por vírgula, e o último da lista fica sem. O editor marca em vermelho quando algo quebra: não salve com vermelho na tela.</p></div>
-      <div class="regra"><span class="ic">Aa</span><p><b>Acentos no conteúdo, nunca no nome do arquivo.</b> "São José do Rio Preto" no texto está ótimo; o arquivo é <span class="mono">sao-jose.jpg</span>, sem espaço, sem acento, sem maiúscula surpresa.</p></div>
-      <div class="regra"><span class="ic">=</span><p><b>Mesmo nome troca, nome novo adiciona.</b> Upload com o nome idêntico substitui o arquivo e o site atualiza sozinho. Nome diferente exige apontar o novo caminho no arquivo de dados.</p></div>
-      <div class="regra"><span class="ic">!</span><p><b>Não mexa nas pastas de sistema.</b> Tudo que está em <span class="mono">src/components</span>, <span class="mono">src/pages</span>, <span class="mono">src/i18n</span>, <span class="mono">migracao</span> e <span class="mono">.github</span> é estrutura do site: alterações aí são com a 75 LAB.</p></div>
-      <div class="regra"><span class="ic">3x</span><p><b>O site fala três idiomas.</b> Lojas, PDFs e imagens valem para os três automaticamente. Textos novos de página precisam de tradução: envie o texto em português que devolvemos nas três línguas.</p></div>
-    </div>
+    <ul class="check">
+      <li><b>Um arquivo, um destino.</b> O nome do arquivo precisa dizer a qual linha, catálogo ou cor ele pertence. Sem isso, ele fica em espera e a 75 LAB resolve com você.</li>
+      <li><b>PDF e JPG.</b> Boletins e catálogos em PDF; imagens em JPG. Outros formatos ficam em espera.</li>
+      <li><b>Arquivos muito pesados</b> (acima de 100 MB) é melhor combinar com a 75 LAB antes.</li>
+      <li><b>A planilha é a fonte oficial das lojas.</b> Se uma loja está errada no site, corrija na planilha, nunca peça "só desta vez" por mensagem: na rodada seguinte a planilha venceria.</li>
+      <li><b>Nada vai ao ar sem verificação.</b> O robô valida tudo antes de publicar; se algo estiver fora do padrão, a publicação daquele item espera e a 75 LAB é avisada.</li>
+    </ul>
   </div>
 </section>
 
-<section id="publicar">
+<section id="conferir">
   <div class="pagina">
     <span class="num">07</span>
-    <h2>Conferir e publicar</h2>
-    <p class="lead">Nada do que você edita vai direto para o público. O caminho é sempre: <b>edição → ambiente de testes → conferência → publicação oficial</b>.</p>
+    <h2>Conferir no site</h2>
     <ol class="passos">
-      <li>Depois de salvar, aguarde de 2 a 5 minutos e abra o <b>ambiente de testes</b>. Força a atualização da página com <span class="ui">Ctrl&nbsp;Shift&nbsp;R</span> (ou <span class="ui">Cmd&nbsp;Shift&nbsp;R</span> no Mac).</li>
-      <li>Confira a mudança na página real: a loja apareceu no estado certo? O PDF abre? A imagem trocou?</li>
-      <li>Está certo? Avise a 75 LAB pelo canal combinado (um "pode publicar" basta). A publicação no <b>alltak.com.br</b> sai normalmente no mesmo dia útil, com verificação nossa de ponta a ponta.</li>
-      <li>Saiu errado? Sem drama: edite de novo, ou peça ajuda. O site oficial continua intacto até a publicação.</li>
+      <li>Fez a mudança? Na virada da próxima hora ela entra no site. Abra <span class="ui">alltak.com.br</span> na página certa.</li>
+      <li>Se a página parecer desatualizada, force a atualização: <span class="ui">Ctrl Shift R</span> no Windows, <span class="ui">Cmd Shift R</span> no Mac, ou recarregue duas vezes no celular.</li>
+      <li>Arquivo enviado ao Drive: confirme que ele foi para a subpasta <b>Publicados</b>. Foi? Está no ar.</li>
+      <li>Algo não apareceu como esperado? Manda mensagem para a 75 LAB com o print: a gente responde rápido.</li>
     </ol>
   </div>
 </section>
@@ -335,11 +290,11 @@
   <div class="pagina">
     <span class="num">08</span>
     <h2>Os leads do site</h2>
-    <p class="lead">Quem baixa um catálogo preenche nome, e-mail, empresa, WhatsApp e cidade. Cada cadastro entra na hora na planilha <b>"Alltak · Leads do site"</b>, no Google Planilhas, com data, material baixado e idioma de navegação. Downloads repetidos da mesma pessoa também ficam registrados, marcados como retorno.</p>
+    <p class="lead">Quem baixa um catálogo preenche nome, e-mail, empresa, WhatsApp e cidade. Cada cadastro entra na hora na planilha <b>"Alltak · Leads do site"</b>, com data, material baixado e idioma. Downloads repetidos da mesma pessoa também ficam registrados, marcados como retorno.</p>
     <ul class="check">
-      <li>O acesso à planilha é por convite do Google: informe os e-mails da equipe comercial que devem enxergar.</li>
-      <li>A planilha é o banco oficial: dá para filtrar, ordenar e exportar para Excel quando quiser.</li>
-      <li>Quer receber avisos? O próprio Google Planilhas notifica por e-mail: menu Ferramentas, Regras de notificação, "qualquer alteração".</li>
+      <li>Filtre, ordene e exporte para Excel direto na planilha, como preferir.</li>
+      <li>Para receber aviso de lead novo por e-mail: menu Ferramentas, Regras de notificação, "qualquer alteração".</li>
+      <li>Acesso por convite: diga quais e-mails do comercial devem enxergar.</li>
     </ul>
   </div>
 </section>
@@ -348,20 +303,20 @@
   <div class="pagina">
     <span class="num">09</span>
     <h2>Roteiro do treinamento</h2>
-    <p class="lead">Encontro único de 1h30, remoto ou presencial, com a equipe que vai operar o site. Traga um caso real de cada tipo para fazermos juntos, ao vivo.</p>
+    <p class="lead">Encontro único de 1 hora, remoto ou presencial. Traga casos reais: uma loja para corrigir, um PDF e uma imagem para trocar. Saímos do treinamento com tudo publicado de verdade.</p>
     <div class="agenda">
-      <div class="bloco"><span class="hora">00:00</span><div class="desc"><b>Visão geral</b>Como o site funciona, os três acessos, tour pelo painel de conteúdo.</div></div>
-      <div class="bloco"><span class="hora">00:15</span><div class="desc"><b>Mão na massa 1 · Lojas</b>Cada participante inclui, altera e exclui uma loja de verdade.</div></div>
-      <div class="bloco"><span class="hora">00:40</span><div class="desc"><b>Mão na massa 2 · Arquivos</b>Troca de um boletim técnico e de uma imagem de cor, com upload real.</div></div>
-      <div class="bloco"><span class="hora">01:05</span><div class="desc"><b>Conferência e publicação</b>Ambiente de testes, regras de ouro, fluxo do "pode publicar".</div></div>
-      <div class="bloco"><span class="hora">01:15</span><div class="desc"><b>Leads e dúvidas</b>Planilha de leads na prática e perguntas abertas.</div></div>
+      <div class="bloco"><span class="hora">00:00</span><div class="desc"><b>Visão geral</b>Como o site funciona, o robô de publicação, tour pela planilha e pela pasta.</div></div>
+      <div class="bloco"><span class="hora">00:10</span><div class="desc"><b>Mão na massa 1 · Lojas</b>Cada participante inclui, altera e exclui uma loja na planilha.</div></div>
+      <div class="bloco"><span class="hora">00:25</span><div class="desc"><b>Mão na massa 2 · Arquivos</b>Troca real de um boletim e de uma imagem de cor pelo Drive, com a regra dos nomes.</div></div>
+      <div class="bloco"><span class="hora">00:40</span><div class="desc"><b>Conferência</b>Acompanhar a rodada, a pasta Publicados e a atualização no site.</div></div>
+      <div class="bloco"><span class="hora">00:50</span><div class="desc"><b>Leads e dúvidas</b>Planilha de leads na prática e perguntas abertas.</div></div>
     </div>
-    <h3 style="font-size:26px;margin-top:40px">Antes do treinamento, cada participante precisa de:</h3>
+    <h3 style="font-size:26px;margin-top:40px">Antes do treinamento</h3>
     <ul class="check">
-      <li>Conta criada no GitHub com o e-mail corporativo (gratuita, leva 2 minutos).</li>
-      <li>Usuário do GitHub informado à 75 LAB para receber o convite de edição.</li>
-      <li>Este manual lido por alto, principalmente o Mapa do Conteúdo.</li>
-      <li>Um caso real para resolver ao vivo: uma loja, um PDF ou uma imagem que precise atualizar.</li>
+      <li>Enviar à 75 LAB a lista de e-mails (Google) de quem vai operar o site, para os convites da planilha e da pasta.</li>
+      <li>Enviar os e-mails do comercial que devem ver a planilha de leads.</li>
+      <li>Ler este manual por alto, principalmente o Mapa do Conteúdo e a regra dos nomes de arquivo.</li>
+      <li>Separar os casos reais para fazer ao vivo.</li>
     </ul>
   </div>
 </section>
